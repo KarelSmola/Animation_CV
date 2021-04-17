@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 nav {
@@ -13,10 +14,32 @@ nav {
 
 nav button {
   height: 20%;
+  border: 1px solid black;
+  margin: 1px;
+  background-color: #eee;
+}
+
+nav button p {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .hidden {
   display: none;
+}
+
+.about-me-box,
+.education-box,
+.skills-box,
+.work-box,
+.freetime-box {
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  width: 70%;
+  padding: 10px;
+  background-color: #eee;
+  z-index: 10;
 }
 
 .about-me-content,
@@ -24,18 +47,23 @@ nav button {
 .skills-content,
 .work-content,
 .freetime-content {
-  position: absolute;
-  top: 2%;
-  left: 10%;
-  width: 70%;
-  background-color: aquamarine;
-  box-shadow: 0 3rem 5rem rgba(0 0 0 0.3);
-  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .close-button {
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  border: 0;
+  line-height: 20px;
+  font-size: 40px;
+  top: 0;
+  right: 0;
+  text-align: center;
+  color: #999;
 }
 
 .overlay {

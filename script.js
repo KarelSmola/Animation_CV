@@ -1,11 +1,11 @@
 "use strict";
 // Selectors
 const aboutMeBtn = document.querySelector(".about-me");
-const aboutMeContent = document.querySelector(".about-me-content");
-const educationContent = document.querySelector(".education-content");
-const skillsContent = document.querySelector(".skills-content");
-const workContent = document.querySelector(".work-content");
-const freetimeContent = document.querySelector(".freetime-content");
+const aboutMeBox = document.querySelector(".about-me-box");
+const educationBox = document.querySelector(".education-box");
+const skillsBox = document.querySelector(".skills-box");
+const workBox = document.querySelector(".work-box");
+const freetimeBox = document.querySelector(".freetime-box");
 const overlay = document.querySelector(".overlay");
 const closeBtns = document.querySelectorAll(".close-button");
 const btns = document.querySelectorAll("button");
@@ -47,19 +47,19 @@ document.addEventListener("keydown", function (e) {
 btns.forEach((el) =>
   el.addEventListener("click", function () {
     if (el.classList.contains("about-me")) {
-      aboutMeContent.classList.remove("hidden");
+      aboutMeBox.classList.remove("hidden");
       showContent();
     } else if (el.classList.contains("education")) {
-      educationContent.classList.remove("hidden");
+      educationBox.classList.remove("hidden");
       showContent();
     } else if (el.classList.contains("skills")) {
-      skillsContent.classList.remove("hidden");
+      skillsBox.classList.remove("hidden");
       showContent();
     } else if (el.classList.contains("work")) {
-      workContent.classList.remove("hidden");
+      workBox.classList.remove("hidden");
       showContent();
     } else if (el.classList.contains("freetime")) {
-      freetimeContent.classList.remove("hidden");
+      freetimeBox.classList.remove("hidden");
       showContent();
     }
   })
@@ -67,7 +67,8 @@ btns.forEach((el) =>
 
 closeBtns.forEach((el) =>
   el.addEventListener("click", function (e) {
-    const item = e.target.closest("div");
+    // const item = e.target.closest("div");
+    const item = e.target.parentNode.parentNode;
     item.classList.add("hidden");
     overlay.classList.add("hidden");
   })
