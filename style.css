@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Rubik;
 }
 
 nav {
@@ -14,7 +14,6 @@ nav {
 
 nav button {
   height: 20%;
-  border: 1px solid black;
   margin: 1px;
   background-color: #eee;
 }
@@ -34,14 +33,20 @@ nav button p {
 .work-box,
 .freetime-box {
   position: absolute;
-  top: 10%;
+  top: 50%;
+  transform: translateY(-50%);
   left: 10%;
-  width: 80%;
+  width: 80vw;
+  height: auto;
   padding: 10px;
   background-color: #eee;
   z-index: 10;
   animation-name: open-content;
   animation-duration: 3s;
+}
+
+.skills-content h1 {
+  text-align: center;
 }
 
 @keyframes open-content {
@@ -55,13 +60,88 @@ nav button p {
 
 .about-me-content,
 .education-content,
-.skills-content,
 .work-content,
 .freetime-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+
+h3 {
+  margin-top: 10px;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+.work-content h1,
+.education-content h1 {
+  margin-bottom: 0px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.about-me-content p,
+.education-content p,
+.work-content p {
+  line-height: 1.5rem;
+}
+
+.progress-bar-box {
+  display: flex;
+  align-items: center;
+  height: 25px;
+  width: 100%;
+  margin: 1px 0 1px 0;
+}
+
+.progress-bar-fill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 20px;
+  padding-left: 3px;
+  animation-name: bar-fill;
+  animation-duration: 4s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+}
+
+.progress-bar-fill p {
+  opacity: 0;
+  animation-name: bar-fill-content;
+  animation-duration: 3s;
+  animation-delay: 4s;
+  animation-fill-mode: forwards;
+}
+
+.percentage {
+  color: #999;
+}
+
+@keyframes bar-fill-content {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bar-fill {
+  from {
+    opacity: 0;
+    width: 0%;
+    background-color: #777;
+  }
+  to {
+    opacity: 1;
+    background-color: #777;
+  }
 }
 
 .close-button {
@@ -92,6 +172,7 @@ nav button p {
 .skills,
 .freetime {
   animation-name: slide-from-right;
+  animation-fill-mode: forwards;
   animation-duration: 4s;
 }
 
@@ -105,6 +186,7 @@ nav button p {
 .education,
 .work {
   animation-name: slide-from-left;
+  animation-fill-mode: forwards;
   animation-duration: 4s;
 }
 
@@ -119,16 +201,19 @@ nav button p {
     margin-right: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
+    border: 0;
   }
 
   95% {
     margin-top: 10px;
     margin-bottom: 10px;
+    border: 1px solid gray;
   }
 
   to {
     margin-right: 0%;
     margin-top: 0;
+    border: 1px solid black;
   }
 }
 
@@ -137,16 +222,19 @@ nav button p {
     margin-left: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
+    border: 0;
   }
 
   95% {
     margin-top: 10px;
     margin-bottom: 10px;
+    border: 1px solid gray;
   }
 
   to {
     margin-left: 0%;
     margin-top: 0;
+    border: 1px solid black;
   }
 }
 
@@ -162,4 +250,10 @@ nav button p {
   to {
     opacity: 1;
   }
+}
+
+img {
+  width: auto;
+  height: auto;
+  margin: 20px 0;
 }
