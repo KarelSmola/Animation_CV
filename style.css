@@ -14,13 +14,21 @@ nav {
 
 nav button {
   height: 20%;
-  margin: 1px;
-  background-color: #eee;
+  background-color: #011d99;
+  border-bottom: 3px solid #fff;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+}
+
+nav button:last-child {
+  border: 0;
 }
 
 nav button p {
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
+  color: #fff;
 }
 
 .hidden {
@@ -39,14 +47,25 @@ nav button p {
   width: 80vw;
   height: auto;
   padding: 10px;
-  background-color: #eee;
+  background-color: #011d99;
   z-index: 10;
   animation-name: open-content;
   animation-duration: 3s;
 }
 
-.skills-content h1 {
-  text-align: center;
+.about-me-box,
+.education-box,
+.skills-box {
+  top: 20%;
+}
+
+.skills-box {
+  top: 27%;
+}
+
+.skills-head {
+  display: flex;
+  justify-content: center;
 }
 
 @keyframes open-content {
@@ -66,14 +85,21 @@ nav button p {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  color: #fff;
 }
 
 h3 {
   margin-top: 10px;
+  background-color: #fff;
+  color: #011d99;
+  padding: 0 5px 0 5px;
 }
 
 h1 {
   margin-bottom: 10px;
+  color: #011d99;
+  background-color: #fff;
+  padding: 0 5px 0 5px;
 }
 
 .work-content h1,
@@ -117,10 +143,7 @@ h1 {
   animation-duration: 3s;
   animation-delay: 4s;
   animation-fill-mode: forwards;
-}
-
-.percentage {
-  color: #999;
+  color: #011d99;
 }
 
 @keyframes bar-fill-content {
@@ -136,11 +159,11 @@ h1 {
   from {
     opacity: 0;
     width: 0%;
-    background-color: #777;
+    background-color: #8ca1ff;
   }
   to {
     opacity: 1;
-    background-color: #777;
+    background-color: #8ca1ff;
   }
 }
 
@@ -154,7 +177,8 @@ h1 {
   top: 0;
   right: 0;
   text-align: center;
-  color: #999;
+  color: #012ae0;
+  background-color: #011d99;
 }
 
 .overlay {
@@ -164,7 +188,7 @@ h1 {
   width: 100%;
   height: 100%;
   backdrop-filter: blur(3px);
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(218, 218, 218, 0.6);
   z-index: 5;
 }
 
@@ -201,19 +225,15 @@ h1 {
     margin-right: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
-    border: 0;
   }
 
   95% {
     margin-top: 10px;
     margin-bottom: 10px;
-    border: 1px solid gray;
   }
 
   to {
-    margin-right: 0%;
-    margin-top: 0;
-    border: 1px solid black;
+    margin-right: 0;
   }
 }
 
@@ -222,19 +242,15 @@ h1 {
     margin-left: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
-    border: 0;
   }
 
   95% {
     margin-top: 10px;
     margin-bottom: 10px;
-    border: 1px solid gray;
   }
 
   to {
     margin-left: 0%;
-    margin-top: 0;
-    border: 1px solid black;
   }
 }
 
@@ -256,4 +272,8 @@ img {
   width: auto;
   height: auto;
   margin: 20px 0;
+}
+
+.invert {
+  filter: invert(100%);
 }
